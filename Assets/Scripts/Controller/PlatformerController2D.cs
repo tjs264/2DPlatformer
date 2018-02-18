@@ -45,7 +45,7 @@ public class PlatformerController2D : MonoBehaviour
 	[Tooltip ("Layers to be considered ground.")]
 	[SerializeField] LayerMask groundLayers = 0;
 
-	bool grounded = false;
+	public bool grounded = false;
 	Rigidbody2D rb2d = null;
 	SpriteRenderer sr = null;
 	Animator anim = null;
@@ -83,7 +83,7 @@ public class PlatformerController2D : MonoBehaviour
 		vel.y += -gravity * Time.deltaTime;
 		rb2d.velocity = vel;
 
-		UpdateAnimations ();
+		//UpdateAnimations ();
 	}
 
 	Vector2 ApplyJump (Vector2 vel)
