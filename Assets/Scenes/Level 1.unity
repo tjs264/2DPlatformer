@@ -118,8 +118,8 @@ GameObject:
   m_PrefabParentObject: {fileID: 1422992235214846, guid: 7b7deb04eedd7934cb9d45d95bbf8af6,
     type: 2}
   m_PrefabInternal: {fileID: 1474758740}
---- !u!60 &333183995
-PolygonCollider2D:
+--- !u!58 &333183995
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -130,24 +130,21 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.24, y: 0.41}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.119999886, y: -0.1517207}
-      - {x: -0.08871651, y: -0.20499998}
-      - {x: 0.08372474, y: -0.20499998}
-      - {x: 0.119999886, y: -0.14791507}
-      - {x: 0.12, y: 0.205}
-      - {x: -0.12, y: 0.205}
+  m_Offset: {x: 0, y: -0.08}
+  serializedVersion: 2
+  m_Radius: 0.12064976
+--- !u!114 &333184002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 333183994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29801766d715b4504a0619876bac0649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 1941934587403482, guid: 786d52186232447c0a54b9258af30f89, type: 2}
 --- !u!1001 &1474758740
 Prefab:
   m_ObjectHideFlags: 0
@@ -196,6 +193,36 @@ Prefab:
     - target: {fileID: 1422992235214846, guid: 7b7deb04eedd7934cb9d45d95bbf8af6, type: 2}
       propertyPath: m_Name
       value: Pear
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201831273264340, guid: 7b7deb04eedd7934cb9d45d95bbf8af6,
+        type: 2}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201831273264340, guid: 7b7deb04eedd7934cb9d45d95bbf8af6,
+        type: 2}
+      propertyPath: groundCheckOffset.y
+      value: -0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201831273264340, guid: 7b7deb04eedd7934cb9d45d95bbf8af6,
+        type: 2}
+      propertyPath: jumpVelocity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201831273264340, guid: 7b7deb04eedd7934cb9d45d95bbf8af6,
+        type: 2}
+      propertyPath: gravity
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201831273264340, guid: 7b7deb04eedd7934cb9d45d95bbf8af6,
+        type: 2}
+      propertyPath: groundingToleranceTimer
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201831273264340, guid: 7b7deb04eedd7934cb9d45d95bbf8af6,
+        type: 2}
+      propertyPath: groundCheckWidth
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 60070980804444616, guid: 7b7deb04eedd7934cb9d45d95bbf8af6, type: 2}
