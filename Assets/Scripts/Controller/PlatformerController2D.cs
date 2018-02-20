@@ -144,7 +144,7 @@ public class PlatformerController2D : MonoBehaviour
 	{
 		bool wasJustgrounded = Time.time < lostGroundingTime + groundingToleranceTimer;
 		bool hasJustJumped = Time.time <= lastJumpTime + Time.deltaTime;
-		return (grounded || wasJustgrounded) && !hasJustJumped;
+		return (grounded || wasJustgrounded) && !hasJustJumped && Player.hasJumpPower;
 	}
 
 	/// <summary>

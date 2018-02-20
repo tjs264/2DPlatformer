@@ -1,10 +1,4 @@
-﻿// <copyright file="Player.cs" company="DIS Copenhagen">
-// Copyright (c) 2017 All Rights Reserved
-// </copyright>
-// <author>Benno Lueders</author>
-// <date>07/14/2017</date>
-
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 /// <summary>
@@ -22,7 +16,7 @@ public class Player : MonoBehaviour
 	}
 
 	[Tooltip ("Number of lifes of the player.")]
-	[SerializeField] int hitPoints = 8;
+	[SerializeField] int hitPoints = 5;
 	[Tooltip ("Duration of the blinking and stunning when hurt by an enemy.")]
 	[SerializeField] float hurtTimer = 0.1f;
 	[Tooltip ("Object to be spawned on death.")]
@@ -32,6 +26,7 @@ public class Player : MonoBehaviour
 	SpriteRenderer[] sr;
 	PlayerStatus status;
 	Coroutine hurtRoutine;
+	public static bool hasJumpPower = false; 
 
 	void Awake ()
 	{
@@ -46,7 +41,7 @@ public class Player : MonoBehaviour
 	/// <param name="force">Strength of upwards push.</param>
 	public void ForceJump (float force)
 	{
-		controller.ForceJump (force);
+			controller.ForceJump (force);
 	}
 
 	/// <summary>
@@ -103,5 +98,6 @@ public class Player : MonoBehaviour
 		Instantiate<GameObject> (deadPrefab, transform.position, transform.rotation);
 		Destroy (gameObject);
 	}
+
 }
 
