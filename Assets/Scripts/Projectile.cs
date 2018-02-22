@@ -21,19 +21,24 @@ public class Projectile : MonoBehaviour{
 	{
 		if (other.CompareTag ("Monster")) { 
 			Monster monster = other.GetComponent<Monster>();
-            Destroy(gameObject);
             monster.OnHit();
 		}
 
         if (other.CompareTag("StaticMonster"))
         {
             StaticMonster monster = other.GetComponent<StaticMonster>();
-            Destroy(gameObject);
             monster.OnHit();
         }
+
+        if(!(other.CompareTag("Player"))) {
+            Debug.Log("TRIGGER COLLISION");
+            Destroy(gameObject);
+
+        }
+
 	}
 
-	IEnumerator KillAfterSeconds (float seconds)
+    IEnumerator KillAfterSeconds (float seconds)
 	{
 		yield return new WaitForSeconds (seconds);
 		Destroy (gameObject);

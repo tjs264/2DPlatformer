@@ -11,7 +11,6 @@ public class Shoot : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
         {
-            Debug.Log("SHOOT");
             if (hasGun)
             {
                 Instantiate(bullet, transform.position, Quaternion.identity);
