@@ -19,22 +19,11 @@ public class Projectile : MonoBehaviour{
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		if (other.CompareTag ("Monster")) { 
-			Monster monster = other.GetComponent<Monster>();
-            monster.OnHit();
+		if (other.CompareTag ("Enemy")) { 
+			Enemy enemy = other.GetComponent<Enemy>();
+            enemy.OnHit();
+			Destroy (gameObject); //destroy the projectile
 		}
-
-        if (other.CompareTag("StaticMonster"))
-        {
-            StaticMonster monster = other.GetComponent<StaticMonster>();
-            monster.OnHit();
-        }
-
-        if(!(other.CompareTag("Player"))) {
-            Debug.Log("TRIGGER COLLISION");
-            Destroy(gameObject);
-
-        }
 
 	}
 
