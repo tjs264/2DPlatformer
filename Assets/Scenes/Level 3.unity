@@ -155,12 +155,12 @@ Prefab:
     - target: {fileID: 114778313074165786, guid: 803038f932f1b495f8df57d51edc9140,
         type: 2}
       propertyPath: user
-      value: 
+      value:
       objectReference: {fileID: 86332057}
     - target: {fileID: 114778313074165786, guid: 803038f932f1b495f8df57d51edc9140,
         type: 2}
       propertyPath: deadPrefab
-      value: 
+      value:
       objectReference: {fileID: 1578157417625428, guid: df0328bd95b87af49b180afed2bfd458,
         type: 2}
     - target: {fileID: 114778313074165786, guid: 803038f932f1b495f8df57d51edc9140,
@@ -232,12 +232,12 @@ Prefab:
     - target: {fileID: 114610651411887826, guid: 999753a8cd0f545bd9a2d4945f412a3e,
         type: 2}
       propertyPath: user
-      value: 
+      value:
       objectReference: {fileID: 86332057}
     - target: {fileID: 114610651411887826, guid: 999753a8cd0f545bd9a2d4945f412a3e,
         type: 2}
       propertyPath: deadPrefab
-      value: 
+      value:
       objectReference: {fileID: 1578157417625428, guid: df0328bd95b87af49b180afed2bfd458,
         type: 2}
     - target: {fileID: 114610651411887826, guid: 999753a8cd0f545bd9a2d4945f412a3e,
@@ -313,7 +313,7 @@ Prefab:
     - target: {fileID: 114439461185261812, guid: 7a10ecaeaf72f4688ae8ab5fbe96da0d,
         type: 2}
       propertyPath: user
-      value: 
+      value:
       objectReference: {fileID: 86332057}
     - target: {fileID: 114439461185261812, guid: 7a10ecaeaf72f4688ae8ab5fbe96da0d,
         type: 2}
@@ -424,12 +424,12 @@ Prefab:
     - target: {fileID: 114439461185261812, guid: 7a10ecaeaf72f4688ae8ab5fbe96da0d,
         type: 2}
       propertyPath: user
-      value: 
+      value:
       objectReference: {fileID: 86332057}
     - target: {fileID: 114439461185261812, guid: 7a10ecaeaf72f4688ae8ab5fbe96da0d,
         type: 2}
       propertyPath: deadPrefab
-      value: 
+      value:
       objectReference: {fileID: 1578157417625428, guid: df0328bd95b87af49b180afed2bfd458,
         type: 2}
     - target: {fileID: 114439461185261812, guid: 7a10ecaeaf72f4688ae8ab5fbe96da0d,
@@ -503,8 +503,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78d4afef2a5184a81b99c8e850eda534, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   healthSlider: {fileID: 651964217}
 --- !u!1 &589226987 stripped
 GameObject:
@@ -637,8 +637,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8e537e363e0a964988f3c850e5f89e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   target: {fileID: 86332065}
   xMin: -30
   xMax: 40
@@ -846,7 +846,7 @@ Prefab:
     - target: {fileID: 114439854532618638, guid: b6d93de49eec24bdca2d1d4c4e3d9aec,
         type: 2}
       propertyPath: user
-      value: 
+      value:
       objectReference: {fileID: 86332057}
     - target: {fileID: 114439854532618638, guid: b6d93de49eec24bdca2d1d4c4e3d9aec,
         type: 2}
@@ -866,7 +866,7 @@ Prefab:
     - target: {fileID: 114439854532618638, guid: b6d93de49eec24bdca2d1d4c4e3d9aec,
         type: 2}
       propertyPath: deadPrefab
-      value: 
+      value:
       objectReference: {fileID: 1578157417625428, guid: df0328bd95b87af49b180afed2bfd458,
         type: 2}
     - target: {fileID: 1593211219392098, guid: b6d93de49eec24bdca2d1d4c4e3d9aec, type: 2}
@@ -2308,12 +2308,12 @@ Prefab:
     - target: {fileID: 114193390844004392, guid: 6eb12d95a9cf34e019e5ed27f5c7eb4a,
         type: 2}
       propertyPath: user
-      value: 
+      value:
       objectReference: {fileID: 86332057}
     - target: {fileID: 114193390844004392, guid: 6eb12d95a9cf34e019e5ed27f5c7eb4a,
         type: 2}
       propertyPath: deadPrefab
-      value: 
+      value:
       objectReference: {fileID: 1578157417625428, guid: df0328bd95b87af49b180afed2bfd458,
         type: 2}
     - target: {fileID: 114193390844004392, guid: 6eb12d95a9cf34e019e5ed27f5c7eb4a,
@@ -2479,7 +2479,7 @@ Prefab:
     - target: {fileID: 114293025304929592, guid: 541e2ede9d47a40dfb6bbbc506e9a376,
         type: 2}
       propertyPath: healthSlider
-      value: 
+      value:
       objectReference: {fileID: 651964217}
     - target: {fileID: 224793896291094844, guid: 541e2ede9d47a40dfb6bbbc506e9a376,
         type: 2}

@@ -13,7 +13,9 @@ public class Shoot : MonoBehaviour {
         {
             if (hasGun)
             {
-                Instantiate(bullet, transform.position, Quaternion.identity);
+                Vector3 pos = transform.position;
+                pos.y -= 0.1f;
+                Instantiate(bullet, pos, Quaternion.identity);
             }
         }
 
