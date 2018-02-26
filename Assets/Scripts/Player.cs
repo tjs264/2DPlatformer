@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
 		Hurt,
 		Active,
 		InActive,
+		Shrunk,
+		Giant,
 		Dead
 	}
 
@@ -26,7 +28,9 @@ public class Player : MonoBehaviour
 	SpriteRenderer[] sr;
 	PlayerStatus status;
 	Coroutine hurtRoutine;
-	public static bool hasJumpPower = true; 
+
+	public static bool hasJumpPower = false; 
+	Vector2 temp;
 
 	void Awake ()
 	{
@@ -90,6 +94,26 @@ public class Player : MonoBehaviour
 		status = PlayerStatus.Active;
 	}
 
+	IEnumerator SizeUp ()
+	{
+		status = PlayerStatus.Giant;
+		temp = transform.localScale;
+		temp.x += 1f;
+		temp.y += 1f; 
+		transform.localScale = temp; 
+
+		yield return new WaitForSeconds(25f);
+		temp.x -= 1f;
+		temp.y -= 1f;
+		transform.localScale = temp; 
+		status = PlayerStatus.Active;
+	}
+
+//	IEnumerator Shrink ()
+//	{
+//
+//	}
+
 	/// <summary>
 	/// Destroy the player and spawn the death animation.
 	/// </summary>
@@ -97,6 +121,18 @@ public class Player : MonoBehaviour
 	{
 		Instantiate<GameObject> (deadPrefab, transform.position, transform.rotation);
 		Destroy (gameObject);
+	}
+
+	void OnTriggerEnter2D(Collider2D other) 
+	{
+		if(other.tag == "SizeUp") {
+			StartCoroutine(SizeUp());
+		}
+		if(status == PlayerStatus.Giant){
+
+			Destroy(other); 
+		}
+
 	}
 
 }
