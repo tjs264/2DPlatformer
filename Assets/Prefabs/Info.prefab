@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3edbf0e8bf9e84d07b0e5c2ad6c32d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 0}
+  info: {fileID: 1439302228180272, guid: 6c0a2f332d56a4cc4a004423f3552e45, type: 2}
   displayText: You are a simple pear with simple abilities
 --- !u!212 &212520821607476406
 SpriteRenderer:
