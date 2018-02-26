@@ -7,6 +7,7 @@ TagManager:
   - Monster
   - StaticMonster
   - JumpPower
+  - SizeUp
   layers:
   - Default
   - TransparentFX
