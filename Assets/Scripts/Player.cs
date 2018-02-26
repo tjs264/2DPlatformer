@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
 	PlayerStatus status;
 	Coroutine hurtRoutine;
 
-	public static bool hasJumpPower = false; 
+	public static bool hasJumpPower = true; 
 	Vector2 temp;
 
 	void Awake ()
