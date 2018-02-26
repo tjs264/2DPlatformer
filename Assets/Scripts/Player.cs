@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
 	SpriteRenderer[] sr;
 	PlayerStatus status;
 	Coroutine hurtRoutine;
-	public static bool hasJumpPower = false; 
+	public static bool hasJumpPower = true; 
 
 	void Awake ()
 	{
