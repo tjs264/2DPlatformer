@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Player script. Manages the health and interaction with enemies of the player.
@@ -119,9 +120,17 @@ public class Player : MonoBehaviour
 	/// </summary>
 	public void Die ()
 	{
-		Instantiate<GameObject> (deadPrefab, transform.position, transform.rotation);
-		Destroy (gameObject);
+        StartCoroutine(DieCoRout());
 	}
+
+    private IEnumerator DieCoRout()
+    {
+        GameObject dead = Instantiate<GameObject>(deadPrefab, transform.position, transform.rotation);
+        dead.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,12f);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
 	void OnTriggerEnter2D(Collider2D other) 
 	{
