@@ -18,8 +18,10 @@ public class Enemy : MonoBehaviour{
 	EnemyStatus status;
 	SpriteRenderer[] sr;
 	Coroutine hurtRoutine;
-	private Vector2 currentLocation;
-	private Vector2 previousLocation;
+
+//	public LayerMask enemyMask;
+//	Transform myTransform;
+//	float width;
 
 	public enum EnemyStatus
 	{
@@ -30,19 +32,25 @@ public class Enemy : MonoBehaviour{
 	}
 
 	void Start(){
+//		myTransform = this.transform;
+//		width = this.GetComponent<Rigidbody2D> ();
+
 		epanel = GameObject.FindObjectOfType<UIEnemyHealth> ();
 		if (epanel == null) {
 			Debug.LogError ("UIEnemyHealth component could not be found, add it to the UI");
 		}
 		epanel.UpdateSlider(maxLives, lives);
-	
+		sr = GetComponentsInChildren<SpriteRenderer> ();
+		status = EnemyStatus.Active;
 	}
 
 	void Update(){
+//		Vector2 lineCastPos = myTransform.position - myTransform.right * width;
+//		bool isGrounded = Physics2D.Linecast (lineCastPos, lineCastPos + Vector2.down, enemyMask);
 		if (user != null) {
 			float distanceToTarget = Vector2.Distance (user.transform.position, transform.position);
 			//Vector2 direction = (user.transform.position - transform.position).normalized;
-			if (distanceToTarget <= 20) {
+			if (distanceToTarget <= 20 /*&& !isGrounded*/) {
 				if (user != null) {
 					transform.position = Vector2.MoveTowards (transform.position, user.transform.position, Time.deltaTime * speed);
 				}
@@ -58,10 +66,18 @@ public class Enemy : MonoBehaviour{
 		}
 	}
 	public void OnHit(){
+		if (status != EnemyStatus.Active) {
+			return;
+		}
+
 		lives--;
 		epanel.UpdateSlider (maxLives, lives);
 		if (lives <= 0)
 			Die ();
+
+		if (hurtRoutine != null) {
+			StopCoroutine (hurtRoutine);
+		}
 		hurtRoutine = StartCoroutine (HurtRoutine ());
 	}
 	IEnumerator HurtRoutine (){
