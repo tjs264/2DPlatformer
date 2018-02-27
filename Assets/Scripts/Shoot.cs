@@ -15,6 +15,9 @@ public class Shoot : MonoBehaviour {
             {
                 Vector3 pos = transform.position;
                 pos.y -= 0.1f;
+                if (bullet.GetComponent<Projectile>().flip == true) {
+                    pos.x -= 0.8f;
+                }
                 Instantiate(bullet, pos, Quaternion.identity);
             }
         }
@@ -22,13 +25,13 @@ public class Shoot : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             GetComponent<SpriteRenderer>().flipX = true;
-            bullet.GetComponent<Projectile>().direction = new Vector2(-1, 0);
+            bullet.GetComponent<Projectile>().flip = true;
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             GetComponent<SpriteRenderer>().flipX = false;
-            bullet.GetComponent<Projectile>().direction = new Vector2(1, 0);
+            bullet.GetComponent<Projectile>().flip = false;
         }
     }
 }
