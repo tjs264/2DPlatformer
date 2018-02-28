@@ -110,10 +110,20 @@ public class Player : MonoBehaviour
 		status = PlayerStatus.Active;
 	}
 
-//	IEnumerator Shrink ()
-//	{
-//
-//	}
+	IEnumerator Shrink ()
+	{
+		status = PlayerStatus.Shrunk;
+		temp = transform.localScale;
+		temp.x -= .5f;
+		temp.y -= .5f;
+		transform.localScale = temp;
+
+		yield return new WaitForSeconds(20f);
+		temp.x += .5f;
+		temp.y += .5f;
+		transform.localScale = temp; 
+		status = PlayerStatus.Active; 
+	}
 
 	/// <summary>
 	/// Destroy the player and spawn the death animation.
@@ -135,7 +145,17 @@ public class Player : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D other) 
 	{
 		if(other.tag == "SizeUp") {
-			StartCoroutine(SizeUp());
+			if(status != PlayerStatus.Shrunk) {
+				StartCoroutine(SizeUp());
+				Destroy(other);
+			}
+
+		}
+		if(other.tag == "Shrink") {
+			if(status != PlayerStatus.Giant){
+				StartCoroutine(Shrink());
+				Destroy(other);
+			}
 		}
 		if(status == PlayerStatus.Giant){
 
