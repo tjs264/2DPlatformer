@@ -4,9 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Monster
-  - StaticMonster
-  - JumpPower
+  - SizeUp
+  - Shrink
   layers:
   - Default
   - TransparentFX
@@ -16,9 +15,9 @@ TagManager:
   - UI
   - 
   - 
-  - Player
-  - Ground
-  - Enemy
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -41,24 +40,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 1312104827
-    locked: 0
-  - name: Decals
-    uniqueID: 1452162091
-    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Level
-    uniqueID: 1532166503
-    locked: 0
-  - name: Player
-    uniqueID: 3141899805
-    locked: 0
-  - name: Enemy
-    uniqueID: 4061946755
-    locked: 0
-  - name: Foreground
-    uniqueID: 1487954149
     locked: 0

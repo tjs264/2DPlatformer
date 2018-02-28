@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Player script. Manages the health and interaction with enemies of the player.
@@ -13,8 +12,6 @@ public class Player : MonoBehaviour
 		Hurt,
 		Active,
 		InActive,
-		Shrunk,
-		Giant,
 		Dead
 	}
 
@@ -29,9 +26,7 @@ public class Player : MonoBehaviour
 	SpriteRenderer[] sr;
 	PlayerStatus status;
 	Coroutine hurtRoutine;
-	public static bool hasJumpPower = false;
-	public static bool hasShootPower = false;
-	Vector2 temp;
+	public static bool hasJumpPower = false; 
 
 	void Awake ()
 	{
@@ -95,73 +90,14 @@ public class Player : MonoBehaviour
 		status = PlayerStatus.Active;
 	}
 
-	IEnumerator SizeUp ()
-	{
-		status = PlayerStatus.Giant;
-		temp = transform.localScale;
-		temp.x += 1f;
-		temp.y += 1f;
-		transform.localScale = temp;
-
-		yield return new WaitForSeconds(25f);
-		temp.x -= 1f;
-		temp.y -= 1f;
-		transform.localScale = temp;
-		status = PlayerStatus.Active;
-	}
-
-	IEnumerator Shrink ()
-	{
-		status = PlayerStatus.Shrunk;
-		temp = transform.localScale;
-		temp.x -= .5f;
-		temp.y -= .5f;
-		transform.localScale = temp;
-
-		yield return new WaitForSeconds(20f);
-		temp.x += .5f;
-		temp.y += .5f;
-		transform.localScale = temp;
-		status = PlayerStatus.Active;
-	}
-
 	/// <summary>
 	/// Destroy the player and spawn the death animation.
 	/// </summary>
 	public void Die ()
 	{
-        StartCoroutine(DieCoRout());
-	}
-
-    private IEnumerator DieCoRout()
-    {
-        GameObject dead = Instantiate<GameObject>(deadPrefab, transform.position, transform.rotation);
-        dead.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,12f);
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		if(other.tag == "SizeUp") {
-			if(status != PlayerStatus.Shrunk) {
-				StartCoroutine(SizeUp());
-				Destroy(other);
-			}
-
-		}
-		if(other.tag == "Shrink") {
-			if(status != PlayerStatus.Giant){
-				StartCoroutine(Shrink());
-				Destroy(other);
-			}
-		}
-		if(status == PlayerStatus.Giant){
-
-			Destroy(other);
-		}
-
+		Instantiate<GameObject> (deadPrefab, transform.position, transform.rotation);
+		Destroy (gameObject);
 	}
 
 }
+
