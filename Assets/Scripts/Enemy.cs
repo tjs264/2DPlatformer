@@ -65,6 +65,7 @@ public class Enemy : MonoBehaviour{
 			player.Hurt ();
 		}
 	}
+
 	public void OnHit(){
 		if (status != EnemyStatus.Active) {
 			return;
@@ -80,6 +81,7 @@ public class Enemy : MonoBehaviour{
 		}
 		hurtRoutine = StartCoroutine (HurtRoutine ());
 	}
+	
 	IEnumerator HurtRoutine (){
 		status = EnemyStatus.Hurt;
 		float timer = 0;
