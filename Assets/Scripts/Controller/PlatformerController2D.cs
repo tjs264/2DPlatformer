@@ -15,7 +15,7 @@ using UnityEngine;
 public class PlatformerController2D : MonoBehaviour
 {
 	[HideInInspector] public Vector2 input;
-	[HideInInspector] public bool inputJump;
+	 public bool inputJump;
 	[HideInInspector] public bool IsGrounded { get { return grounded; } }
 
 	[Tooltip ("Can this object move.")]

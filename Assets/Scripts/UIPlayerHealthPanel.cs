@@ -13,9 +13,12 @@ public class UIPlayerHealthPanel : MonoBehaviour
 {
 	[Tooltip ("UI images of the hearts, number of hearts has to be equal to the number of lifes!")]
 	[SerializeField] Image[] hearts = null;
+	[SerializeField] RectTransform healthSlider;
 
 	[Tooltip ("How many hearts are currently shown active")]
 	public int currentLifes = 8;
+	public int enemyLives = 2;
+	public int maxLives = 2;
 
 	[Tooltip ("How long is the blinking animation when a heart is lost")]
 	[SerializeField] float removeLifeAnimTimer = 0.5f;
@@ -48,4 +51,5 @@ public class UIPlayerHealthPanel : MonoBehaviour
 		}
 		sr.color = new Color (1, 1, 1, 0.2f);
 	}
+		
 }

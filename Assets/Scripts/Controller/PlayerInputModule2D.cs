@@ -28,6 +28,6 @@ public class PlayerInputModule2D : MonoBehaviour
 			input.Normalize ();
 		}
 		controller.input = input;
-		controller.inputJump = Input.GetButtonDown ("Jump");
+		controller.inputJump = Input.GetKeyDown (KeyCode.UpArrow);
 	}
 }
