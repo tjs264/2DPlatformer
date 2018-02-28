@@ -47,15 +47,16 @@ public class Enemy : MonoBehaviour{
 	void Update(){
 //		Vector2 lineCastPos = myTransform.position - myTransform.right * width;
 //		bool isGrounded = Physics2D.Linecast (lineCastPos, lineCastPos + Vector2.down, enemyMask);
-		if (user != null) {
+		/*if (user != null) {
 			float distanceToTarget = Vector2.Distance (user.transform.position, transform.position);
 			//Vector2 direction = (user.transform.position - transform.position).normalized;
-			if (distanceToTarget <= 20 /*&& !isGrounded*/) {
-				if (user != null) {
+			if (user != null) {
+				if (distanceToTarget <= 20 /*&& !isGrounded) {
+				
 					transform.position = Vector2.MoveTowards (transform.position, user.transform.position, Time.deltaTime * speed);
 				}
 			}
-		}
+		}*/
 	}
 
 	void OnCollisionStay2D (Collision2D col)
@@ -81,7 +82,7 @@ public class Enemy : MonoBehaviour{
 		}
 		hurtRoutine = StartCoroutine (HurtRoutine ());
 	}
-	
+
 	IEnumerator HurtRoutine (){
 		status = EnemyStatus.Hurt;
 		float timer = 0;

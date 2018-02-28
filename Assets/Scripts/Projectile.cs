@@ -33,6 +33,9 @@ public class Projectile : MonoBehaviour{
 			Enemy enemy = other.GetComponent<Enemy> ();
 			enemy.OnHit ();
 		}
+		if(other.CompareTag("SnakeEnemy")){
+			Destroy (other);
+		}
 
 	}
 
