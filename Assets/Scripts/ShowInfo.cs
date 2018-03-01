@@ -25,9 +25,13 @@ public class ShowInfo : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        t.text = displayText;
-        i.enabled = true;
-        t.enabled = true;
+        if (collision.gameObject.CompareTag("Player"))
+        {
+
+            t.text = displayText;
+            i.enabled = true;
+            t.enabled = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

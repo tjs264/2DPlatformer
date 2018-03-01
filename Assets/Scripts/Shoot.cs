@@ -16,7 +16,7 @@ public class Shoot : MonoBehaviour {
                 Vector3 pos = transform.position;
                 pos.y -= 0.1f;
                 if (bullet.GetComponent<Projectile>().flip == true) {
-                    pos.x -= 0.8f;
+                    pos.x -= 1.5f;
                 }
                 Instantiate(bullet, pos, Quaternion.identity);
             }
