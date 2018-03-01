@@ -29,5 +29,6 @@ public class PlayerInputModule2D : MonoBehaviour
 		}
 		controller.input = input;
 		controller.inputJump = Input.GetKeyDown (KeyCode.UpArrow);
+		controller.inputShoot = Input.GetKeyDown (KeyCode.LeftShift);
 	}
 }

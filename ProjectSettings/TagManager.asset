@@ -6,6 +6,8 @@ TagManager:
   tags:
   - SizeUp
   - Shrink
+  - Projectile
+  - Enemy
   layers:
   - Default
   - TransparentFX
