@@ -38,6 +38,8 @@ public class SnakeEnemy : MonoBehaviour {
 		if (col.collider.CompareTag ("Player")) {
 			Player player = col.transform.root.GetComponentInChildren<Player> ();
 			player.Hurt ();
+            col.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(30f, 30f));
+
 		}
 	}
 

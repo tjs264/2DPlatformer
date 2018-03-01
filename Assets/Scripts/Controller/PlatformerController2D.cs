@@ -74,7 +74,7 @@ public class PlatformerController2D : MonoBehaviour
 	void FixedUpdate ()
 	{
 		UpdateGrounding ();
-		UpdateFacing ();
+		// UpdateFacing ();
 
 		Vector2 vel = rb2d.velocity;
 
@@ -89,7 +89,7 @@ public class PlatformerController2D : MonoBehaviour
 		vel.y += -gravity * Time.deltaTime;
 		rb2d.velocity = vel;
 
-		UpdateShooting ();
+		// UpdateShooting ();
 		//UpdateAnimations ();
 	}
 
@@ -242,11 +242,9 @@ public class PlatformerController2D : MonoBehaviour
 		if (facing == 1) {
 			shootDirection = Vector3.right;
 			flip = false;
-			Debug.Log("penis");
 		} else { // if facing == -1
 			shootDirection = Vector3.left;
 			flip = true;
-			Debug.Log("stinky vag");
 		}
 		Debug.Log(shootDirection);
 

@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
 	public static bool hasJumpPower = false;
 	public static bool hasShootPower = false;
 	Vector2 temp;
+    bool flip = true;
 
 	void Awake ()
 	{
@@ -49,10 +50,10 @@ public class Player : MonoBehaviour
 			controller.ForceJump (force);
 	}
 
-	/// <summary>
-	/// Hurt the Player. The player will lose one hitpoint and is invulnerable for hurtTimer time.
-	/// </summary>
-	public void Hurt ()
+    /// <summary>
+    /// Hurt the Player. The player will lose one hitpoint and is invulnerable for hurtTimer time.
+    /// </summary>
+    public void Hurt ()
 	{
 		if (status != PlayerStatus.Active) {
 			return;
