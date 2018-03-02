@@ -5,7 +5,7 @@ using UnityEngine;
 public class S : MonoBehaviour
 {
 
-    // private bool hasGun = true;
+    private bool hasGun = true;
     public GameObject bullet;
 
     private void Update()
