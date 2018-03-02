@@ -55,6 +55,11 @@ public class PlatformerController2D : MonoBehaviour
 	float lastInputJump = 0;
 	int facing = 1;
 
+	public bool inputShoot;
+	float lastTimeFired = 0;
+	[Tooltip ("Prefab to be instantiated when shooting (Projectile)")]
+	public GameObject projectilePrefab;
+
 	void Start ()
 	{
 		canMove = true;
@@ -69,6 +74,7 @@ public class PlatformerController2D : MonoBehaviour
 	void FixedUpdate ()
 	{
 		UpdateGrounding ();
+		// UpdateFacing ();
 
 		Vector2 vel = rb2d.velocity;
 
@@ -83,6 +89,7 @@ public class PlatformerController2D : MonoBehaviour
 		vel.y += -gravity * Time.deltaTime;
 		rb2d.velocity = vel;
 
+		// UpdateShooting ();
 		//UpdateAnimations ();
 	}
 
@@ -95,7 +102,7 @@ public class PlatformerController2D : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Updates grounded and lastGroundingTime. 
+	/// Updates grounded and lastGroundingTime.
 	/// </summary>
 	void UpdateGrounding ()
 	{
@@ -176,7 +183,7 @@ public class PlatformerController2D : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Make the object controlled by this instance jump immediately. 
+	/// Make the object controlled by this instance jump immediately.
 	/// </summary>
 	/// <param name="strength">Strength.</param>
 	public void ForceJump (float strength)
@@ -198,6 +205,61 @@ public class PlatformerController2D : MonoBehaviour
 				Debug.DrawLine (groundCheckStart, groundCheckStart + Vector2.down * groundCheckDepth, Color.red);
 				groundCheckStart += Vector2.right * (1.0f / (groundCheckRayCount - 1.0f)) * groundCheckWidth;
 			}
+		}
+	}
+
+	bool PermissionToShoot ()
+	{
+		return (lastTimeFired + 0.2f <= Time.time && Player.hasShootPower);
+	}
+
+	void UpdateShooting()
+	{
+		// if able to fire
+		if (inputShoot && PermissionToShoot()) {
+			FireProjectile();
+			lastTimeFired = Time.time;
+		}
+
+		// if the fire button is pressed and we waited long enough since the last shot was fired, FIRE!
+		// if (Input.GetButton ("Fire") && (lastTimeFired + 1 / rateOfFire) < Time.time) {
+		// 	switch (fireMode) {
+		// 	case FireMode.Normal:
+		// 		FireNormalLaser ();
+		// 		break;
+		// 	case FireMode.ThreeShot:
+		// 		FireThreeShotLaser ();
+		// 		break;
+		// 	}
+		// 	lastTimeFired = Time.time;
+		// }
+	}
+
+	void FireProjectile()
+	{
+		Vector3 shootDirection;
+		bool flip;
+		if (facing == 1) {
+			shootDirection = Vector3.right;
+			flip = false;
+		} else { // if facing == -1
+			shootDirection = Vector3.left;
+			flip = true;
+		}
+		Debug.Log(shootDirection);
+
+		GameObject projectileObj = Instantiate (projectilePrefab, transform.position + shootDirection, Quaternion.identity);
+		Projectile newProj = projectileObj.GetComponent<Projectile>();
+		newProj.SetFlip(flip);
+		// newProj.flip = flip;
+	}
+
+	void UpdateFacing()
+	{
+		if (rb2d.velocity.x > 0 && facing == -1) {
+			facing = 1;
+		} else if (rb2d.velocity.x < 0 && facing == 1) {
+			facing = -1;
 		}
 	}
 }

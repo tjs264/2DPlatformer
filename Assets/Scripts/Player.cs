@@ -29,8 +29,8 @@ public class Player : MonoBehaviour
 	SpriteRenderer[] sr;
 	PlayerStatus status;
 	Coroutine hurtRoutine;
-
-	public static bool hasJumpPower = true; 
+	public static bool hasJumpPower = true;
+	public static bool hasShootPower = false;
 	Vector2 temp;
     bool flip = true;
 
@@ -102,13 +102,13 @@ public class Player : MonoBehaviour
 		status = PlayerStatus.Giant;
 		temp = transform.localScale;
 		temp.x += 1f;
-		temp.y += 1f; 
-		transform.localScale = temp; 
+		temp.y += 1f;
+		transform.localScale = temp;
 
 		yield return new WaitForSeconds(25f);
 		temp.x -= 1f;
 		temp.y -= 1f;
-		transform.localScale = temp; 
+		transform.localScale = temp;
 		status = PlayerStatus.Active;
 	}
 
@@ -123,8 +123,8 @@ public class Player : MonoBehaviour
 		yield return new WaitForSeconds(20f);
 		temp.x += .5f;
 		temp.y += .5f;
-		transform.localScale = temp; 
-		status = PlayerStatus.Active; 
+		transform.localScale = temp;
+		status = PlayerStatus.Active;
 	}
 
 	/// <summary>
@@ -144,7 +144,7 @@ public class Player : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-	void OnTriggerEnter2D(Collider2D other) 
+	void OnTriggerEnter2D(Collider2D other)
 	{
 		if(other.tag == "SizeUp") {
 			if(status != PlayerStatus.Shrunk) {
@@ -161,10 +161,9 @@ public class Player : MonoBehaviour
 		}
 		if(status == PlayerStatus.Giant){
 
-			Destroy(other); 
+			Destroy(other);
 		}
 
 	}
 
 }
-

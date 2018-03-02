@@ -7,7 +7,7 @@ public class SnakeEnemy : MonoBehaviour {
 
 	public int maxLives;
 	public int lives;
-	public Player player;
+	public GameObject user;
 
 	[Tooltip ("GameObject to be spawned when this instance dies.")]
 	[SerializeField] GameObject deadPrefab = null;
@@ -26,15 +26,6 @@ public class SnakeEnemy : MonoBehaviour {
 		Dead
 	}
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 	void OnCollisionStay2D(Collision2D col){
 		if (col.collider.CompareTag ("Player")) {
@@ -77,6 +68,7 @@ public class SnakeEnemy : MonoBehaviour {
 		}
 		foreach (SpriteRenderer rend in sr) {
 			rend.color = Color.white;
+
 		}
 		status = EnemyStatus.Active;
 	}
