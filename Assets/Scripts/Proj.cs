@@ -33,7 +33,7 @@ public class Proj : MonoBehaviour
 
     void Update()
     {
-		transform.position += new Vector3 (direction.x, direction.y, 0) * speed * Time.deltaTime;
+		//transform.position += new Vector3 (direction.x, direction.y, 0) * speed * Time.deltaTime;
     }
 
     void OnTriggerEnter2D(Collider2D other)
