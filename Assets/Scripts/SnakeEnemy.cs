@@ -39,6 +39,8 @@ public class SnakeEnemy : MonoBehaviour {
 			player.GetComponent<Player>().Hurt();
 		} else if (other.collider.CompareTag ("Projectile")) {
 			Die();
+		}
+	}
 
 	public void OnHit(){
 		if (status != EnemyStatus.Active) {
