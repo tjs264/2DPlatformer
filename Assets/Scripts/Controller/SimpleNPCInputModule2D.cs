@@ -48,18 +48,22 @@ public class SimpleNPCInputModule2D : MonoBehaviour
 			RaycastHit2D hitRight = Physics2D.Linecast (new Vector2 (rightGroundCheck.position.x, rightGroundCheck.position.y), new Vector2 (rightGroundCheck.position.x, rightGroundCheck.position.y - 0.1f), groundLayers);
 			if (hitLeft.collider == null) {
 				dir = 1;
+				GetComponent<SpriteRenderer>().flipX = false;
 			}
 			if (hitRight.collider == null) {
 				dir = -1;
+				GetComponent<SpriteRenderer>().flipX = true;
 			}
 		}
 
 		if (leftWallCheck.IsTouchingLayers (groundLayers)) {
 			dir = 1;
+			GetComponent<SpriteRenderer>().flipX = false;
 		}
 
 		if (rightWallCheck.IsTouchingLayers (groundLayers)) {
 			dir = -1;
+			GetComponent<SpriteRenderer>().flipX = true;
 		}
 
 		if (controller.IsGrounded) {
@@ -69,4 +73,3 @@ public class SimpleNPCInputModule2D : MonoBehaviour
 		}
 	}
 }
-

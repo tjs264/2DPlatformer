@@ -15,17 +15,19 @@ public class SnakeEnemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
 	void OnCollisionStay2D(Collision2D other){
 		if (other.collider.CompareTag ("Player")) {
 			user.GetComponent<Player>().Die();
+		} else if (other.collider.CompareTag ("Projectile")) {
+			Die();
 		}
 	}
 
@@ -34,5 +36,5 @@ public class SnakeEnemy : MonoBehaviour {
 		Destroy (gameObject);
 	}
 
-			
+
 }

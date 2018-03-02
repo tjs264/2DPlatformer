@@ -317,6 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLives: 0
   lives: 0
+  user: {fileID: 0}
   deadPrefab: {fileID: 1283187497016466, guid: 999753a8cd0f545bd9a2d4945f412a3e, type: 2}
 --- !u!114 &114368184059286080
 MonoBehaviour:
@@ -345,6 +346,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   grounded: 0
+  inputShoot: 0
+  projectilePrefab: {fileID: 0}
 --- !u!114 &114491829290084326
 MonoBehaviour:
   m_ObjectHideFlags: 1
