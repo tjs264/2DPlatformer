@@ -48,6 +48,9 @@ public class Proj : MonoBehaviour
 			snakeEnemy.Die ();
 			Destroy (gameObject);
 		}
+        if(!other.CompareTag("Player")) {
+            Destroy(gameObject);
+        }
 
     }
 

@@ -12,4 +12,6 @@ public class JumpPowerUp : MonoBehaviour {
 			Destroy(gameObject);			
 		}
 	}
+
+
 }
