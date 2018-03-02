@@ -8,6 +8,8 @@ TagManager:
   - Shrink
   - Projectile
   - Enemy
+  - SnakeEnemy
+  - Wall
   layers:
   - Default
   - TransparentFX
