@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
 	SpriteRenderer[] sr;
 	PlayerStatus status;
 	Coroutine hurtRoutine;
-	public static bool hasJumpPower = false;
+	public static bool hasJumpPower = true;
 	public static bool hasShootPower = false;
 	Vector2 temp;
     bool flip = true;
