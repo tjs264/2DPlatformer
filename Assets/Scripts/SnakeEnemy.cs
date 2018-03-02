@@ -35,7 +35,7 @@ public class SnakeEnemy : MonoBehaviour {
 	}
 
 	void OnCollisionStay2D(Collision2D other){
-		if (col.collider.CompareTag ("Player")) {
+		if (other.collider.CompareTag ("Player")) {
 			player.GetComponent<Player>().Hurt();
 		} else if (other.collider.CompareTag ("Projectile")) {
 			Die();
