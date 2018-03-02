@@ -41,6 +41,7 @@ public class Proj : MonoBehaviour
 		if (other.CompareTag ("Enemy")) {
 			Enemy enemy = other.GetComponent<Enemy> ();
 			enemy.OnHit ();
+			Destroy (gameObject);
 		}
 		if(other.CompareTag("SnakeEnemy")){
 			SnakeEnemy snakeEnemy = other.GetComponent<SnakeEnemy> ();

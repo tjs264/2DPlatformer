@@ -20,7 +20,6 @@ public class Spikes : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player")) {
-            Debug.Log("DIE");
             player.GetComponent<Player>().Die();
 
         }
