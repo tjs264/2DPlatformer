@@ -47,23 +47,21 @@ public class Enemy : MonoBehaviour{
 	void Update(){
 //		Vector2 lineCastPos = myTransform.position - myTransform.right * width;
 //		bool isGrounded = Physics2D.Linecast (lineCastPos, lineCastPos + Vector2.down, enemyMask);
-		/*if (user != null) {
-			float distanceToTarget = Vector2.Distance (user.transform.position, transform.position);
+		if (user != null) {
+//			float distanceToTarget = Vector2.Distance (user.transform.position, transform.position);
 			//Vector2 direction = (user.transform.position - transform.position).normalized;
-			if (user != null) {
-				if (distanceToTarget <= 20 /*&& !isGrounded) {
+//				if (distanceToTarget <= 20 /*&& !isGrounded*/) {
 				
 					transform.position = Vector2.MoveTowards (transform.position, user.transform.position, Time.deltaTime * speed);
-				}
-			}
-		}*/
+//				}
+		}
 	}
 
-	void OnCollisionStay2D (Collision2D col)
+	void OnCollisionStay2D (Collision2D other)
 	{
-		if (col.collider.CompareTag ("Player")) {
-			Player player = col.transform.root.GetComponentInChildren<Player> ();
-			player.Hurt ();
+		if (other.collider.CompareTag("Player")){
+			Player player = other.transform.root.GetComponentInChildren<Player>();
+			player.Hurt();
 		}
 	}
 
@@ -74,8 +72,9 @@ public class Enemy : MonoBehaviour{
 
 		lives--;
 		epanel.UpdateSlider (maxLives, lives);
-		if (lives <= 0)
+		if (lives <= 0) {
 			Die ();
+		}
 
 		if (hurtRoutine != null) {
 			StopCoroutine (hurtRoutine);

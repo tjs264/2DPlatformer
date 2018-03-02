@@ -33,12 +33,20 @@ public class Proj : MonoBehaviour
 
     void Update()
     {
-
+		transform.position += new Vector3 (direction.x, direction.y, 0) * speed * Time.deltaTime;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-
+		if (other.CompareTag ("Enemy")) {
+			Enemy enemy = other.GetComponent<Enemy> ();
+			enemy.OnHit ();
+		}
+		if(other.CompareTag("SnakeEnemy")){
+			SnakeEnemy snakeEnemy = other.GetComponent<SnakeEnemy> ();
+			snakeEnemy.Die ();
+			Destroy (gameObject);
+		}
 
     }
 

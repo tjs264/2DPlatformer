@@ -82,7 +82,7 @@ public class SnakeEnemy : MonoBehaviour {
 //	}
 //
 
-	void Die (){
+	public void Die (){
 		Instantiate<GameObject> (deadPrefab, transform.position, transform.rotation);
 		Destroy (gameObject);
 	}
