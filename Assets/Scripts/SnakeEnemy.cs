@@ -7,9 +7,11 @@ public class SnakeEnemy : MonoBehaviour {
 
 	public int maxLives;
 	public int lives;
+	public Player player;
 
 	[Tooltip ("GameObject to be spawned when this instance dies.")]
 	[SerializeField] GameObject deadPrefab = null;
+
 
 //	[SerializeField] float hurtTimer = 0.1f;
 //	EnemyStatus status;
@@ -36,10 +38,7 @@ public class SnakeEnemy : MonoBehaviour {
 
 	void OnCollisionStay2D(Collision2D col){
 		if (col.collider.CompareTag ("Player")) {
-			Player player = col.transform.root.GetComponentInChildren<Player> ();
-			player.Hurt ();
-            col.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(30f, 30f));
-
+			player.GetComponent<Player>().Die();
 		}
 	}
 

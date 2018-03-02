@@ -149,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLives: 1
   lives: 1
+  player: {fileID: 0}
   deadPrefab: {fileID: 1578157417625428, guid: df0328bd95b87af49b180afed2bfd458, type: 2}
 --- !u!95 &11973735
 Animator:
@@ -485,6 +486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLives: 1
   lives: 1
+  player: {fileID: 0}
   deadPrefab: {fileID: 1578157417625428, guid: df0328bd95b87af49b180afed2bfd458, type: 2}
 --- !u!95 &104964178
 Animator:
@@ -1822,6 +1824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLives: 1
   lives: 1
+  player: {fileID: 0}
   deadPrefab: {fileID: 1578157417625428, guid: df0328bd95b87af49b180afed2bfd458, type: 2}
 --- !u!95 &729594370
 Animator:
@@ -2041,6 +2044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLives: 1
   lives: 1
+  player: {fileID: 0}
   deadPrefab: {fileID: 1578157417625428, guid: df0328bd95b87af49b180afed2bfd458, type: 2}
 --- !u!95 &756074516
 Animator:
@@ -2464,6 +2468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLives: 1
   lives: 1
+  player: {fileID: 0}
   deadPrefab: {fileID: 1578157417625428, guid: df0328bd95b87af49b180afed2bfd458, type: 2}
 --- !u!95 &974039076
 Animator:
@@ -3930,6 +3935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLives: 1
   lives: 1
+  player: {fileID: 0}
   deadPrefab: {fileID: 1578157417625428, guid: df0328bd95b87af49b180afed2bfd458, type: 2}
 --- !u!95 &1519742905
 Animator:
@@ -4206,6 +4212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLives: 1
   lives: 1
+  player: {fileID: 0}
   deadPrefab: {fileID: 1578157417625428, guid: df0328bd95b87af49b180afed2bfd458, type: 2}
 --- !u!95 &1611449765
 Animator:
@@ -27350,6 +27357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLives: 1
   lives: 1
+  player: {fileID: 0}
   deadPrefab: {fileID: 1578157417625428, guid: df0328bd95b87af49b180afed2bfd458, type: 2}
 --- !u!95 &1833071996
 Animator:
@@ -27569,6 +27577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLives: 1
   lives: 1
+  player: {fileID: 0}
   deadPrefab: {fileID: 1578157417625428, guid: df0328bd95b87af49b180afed2bfd458, type: 2}
 --- !u!95 &1836587016
 Animator:

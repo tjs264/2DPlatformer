@@ -59,11 +59,16 @@ public class Enemy : MonoBehaviour{
 
 	void OnCollisionStay2D (Collision2D other)
 	{
-		if (other.collider.CompareTag("Player")){
-			Player player = other.transform.root.GetComponentInChildren<Player>();
-			player.Hurt();
+//		if (other.collider.CompareTag("Player")){
+//			Debug.Log ("Collision");
+//			Player player = other.transform.root.GetComponentInChildren<Player>();
+//			player.Hurt();
+//		}
+		if (other.collider.CompareTag ("Player")) {
+			user.GetComponent<Player> ().Die ();
 		}
 	}
+
 
 	public void OnHit(){
 		if (status != EnemyStatus.Active) {
