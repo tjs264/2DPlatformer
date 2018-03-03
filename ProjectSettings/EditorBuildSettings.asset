@@ -14,13 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/tstone2.unity
     guid: 9af3869cbe2bd449e919de416c8db243
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level 1.unity
     guid: 95c287dc71c35402f87e761605009b71
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level 2.unity
     guid: 67074f15cb01a4b30b258526a37a52bc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game.unity
     guid: 6a8aa7e675e59b54a8ba5dd5c915184a
   - enabled: 1
