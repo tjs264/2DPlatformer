@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 	public PlayerStatus status;
 	Coroutine hurtRoutine;
 	public static bool hasJumpPower = false;
-	public static bool hasShootPower = true;
+	public static bool hasShootPower = false;
 	public static bool foundKey = false;
 	Vector2 temp;
     bool flip = true;
