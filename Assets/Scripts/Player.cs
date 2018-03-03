@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
 
 	PlatformerController2D controller;
 	SpriteRenderer[] sr;
-	PlayerStatus status;
+	public PlayerStatus status;
 	Coroutine hurtRoutine;
 	public static bool hasJumpPower = false;
 	public static bool hasShootPower = true;
@@ -163,7 +163,7 @@ public class Player : MonoBehaviour
 			}
 		}
 
-		if(status == PlayerStatus.Giant && other.tag == "RatEnemy"){
+		if(status == PlayerStatus.Giant && other.tag == "BasicEnemy"){
 
 			RatEnemy ratEnemy = other.GetComponent<RatEnemy> ();
 			ratEnemy.Die ();
