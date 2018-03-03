@@ -16,11 +16,18 @@ public class RatEnemy : MonoBehaviour {
 	public bool isFacingRight;
 	private float startPos;
 	private float endPos;
+	Player user;
 		
 
 	void OnCollisionStay2D(Collision2D col){
 		if (col.collider.CompareTag ("Player")) {
-			player.GetComponent<Player>().Die();
+			user = col.collider.GetComponent<Player>();
+			if(user.status != Player.PlayerStatus.Giant) {
+				player.GetComponent<Player>().Die();
+			}
+			else{
+				Die();
+			}
 		}
 	}
 
