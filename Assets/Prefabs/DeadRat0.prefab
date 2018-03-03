@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTimer: 10
-  upBounceForce: 5
+  upBounceForce: 15
   gravity: 40
 --- !u!212 &212060013984697582
 SpriteRenderer:
@@ -110,7 +110,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2c3e46daa56704d6b9abed26b924c251, type: 3}
+  m_Sprite: {fileID: 21300004, guid: 2c3e46daa56704d6b9abed26b924c251, type: 3}
   m_Color: {r: 0.5298443, g: 0.5280737, b: 0.5147059, a: 0.984}
   m_FlipX: 0
   m_FlipY: 0
