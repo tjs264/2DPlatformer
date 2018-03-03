@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
 	SpriteRenderer[] sr;
 	PlayerStatus status;
 	Coroutine hurtRoutine;
-	public static bool hasJumpPower = true;
+	public static bool hasJumpPower = false;
 	public static bool hasShootPower = true;
 	Vector2 temp;
     bool flip = true;
@@ -76,7 +76,6 @@ public class Player : MonoBehaviour
 	{
 		status = PlayerStatus.Hurt;
 
-        GetComponent<Rigidbody2D>().velocity = new Vector2(100f, 100f);
 
 		float timer = 0;
 		bool blink = false;
