@@ -25,13 +25,13 @@ public class Menu : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.M) || Input.GetKeyDown(KeyCode.Escape))
         {
             isShowing = !isShowing;
             foreach (GameObject menu_part in menu)
             {
                 menu_part.SetActive(isShowing);
-            }        
+            }
         }
     }
 
@@ -42,7 +42,7 @@ public class Menu : MonoBehaviour {
         foreach (GameObject menu_part in menu)
             {
                 menu_part.SetActive(false);
-            } 
+            }
     }
 
     void RestartLevel() {
