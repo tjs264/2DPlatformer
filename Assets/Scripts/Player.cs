@@ -108,7 +108,7 @@ public class Player : MonoBehaviour
 		temp.y += 1f;
 		transform.localScale = temp;
 
-		yield return new WaitForSeconds(25f);
+		yield return new WaitForSeconds(12f);
 		temp.x -= 1f;
 		temp.y -= 1f;
 		transform.localScale = temp;
@@ -123,7 +123,7 @@ public class Player : MonoBehaviour
 		temp.y -= .5f;
 		transform.localScale = temp;
 
-		yield return new WaitForSeconds(20f);
+		yield return new WaitForSeconds(12f);
 		temp.x += .5f;
 		temp.y += .5f;
 		transform.localScale = temp;
@@ -163,9 +163,10 @@ public class Player : MonoBehaviour
 			}
 		}
 
-		if(status == PlayerStatus.Giant){
+		if(status == PlayerStatus.Giant && other.tag == "RatEnemy"){
 
-			Destroy(other);
+			RatEnemy ratEnemy = other.GetComponent<RatEnemy> ();
+			ratEnemy.Die ();
 		}
 
 	}
