@@ -19,9 +19,7 @@ public class Enemy : MonoBehaviour{
 	SpriteRenderer[] sr;
 	Coroutine hurtRoutine;
 
-//	public LayerMask enemyMask;
-//	Transform myTransform;
-//	float width;
+
 
 	public enum EnemyStatus
 	{
@@ -32,8 +30,6 @@ public class Enemy : MonoBehaviour{
 	}
 
 	void Start(){
-//		myTransform = this.transform;
-//		width = this.GetComponent<Rigidbody2D> ();
 
 		epanel = GameObject.FindObjectOfType<UIEnemyHealth> ();
 		if (epanel == null) {
@@ -45,25 +41,12 @@ public class Enemy : MonoBehaviour{
 	}
 
 	void Update(){
-//		Vector2 lineCastPos = myTransform.position - myTransform.right * width;
-//		bool isGrounded = Physics2D.Linecast (lineCastPos, lineCastPos + Vector2.down, enemyMask);
 		if (user != null) {
-//			float distanceToTarget = Vector2.Distance (user.transform.position, transform.position);
-			//Vector2 direction = (user.transform.position - transform.position).normalized;
-//				if (distanceToTarget <= 20 /*&& !isGrounded*/) {
-				
-					transform.position = Vector2.MoveTowards (transform.position, user.transform.position, Time.deltaTime * speed);
-//				}
+			transform.position = Vector2.MoveTowards (transform.position, user.transform.position, Time.deltaTime * speed);
 		}
 	}
 
-	void OnCollisionStay2D (Collision2D other)
-	{
-//		if (other.collider.CompareTag("Player")){
-//			Debug.Log ("Collision");
-//			Player player = other.transform.root.GetComponentInChildren<Player>();
-//			player.Hurt();
-//		}
+	void OnCollisionStay2D (Collision2D other){
 		if (other.collider.CompareTag ("Player")) {
 			user.GetComponent<Player> ().Die ();
 		}

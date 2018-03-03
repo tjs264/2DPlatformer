@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
 	Coroutine hurtRoutine;
 	public static bool hasJumpPower = true;
 	public static bool hasShootPower = true;
+	public static bool foundKey = false;
 	Vector2 temp;
     bool flip = true;
 
@@ -162,11 +163,12 @@ public class Player : MonoBehaviour
 				Destroy(other);
 			}
 		}
+
 		if(status == PlayerStatus.Giant){
 
 			Destroy(other);
 		}
 
 	}
-
+		
 }

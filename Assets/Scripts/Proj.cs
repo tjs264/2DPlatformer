@@ -43,9 +43,9 @@ public class Proj : MonoBehaviour
 			enemy.OnHit ();
 			Destroy (gameObject);
 		}
-		if(other.CompareTag("SnakeEnemy")){
-			SnakeEnemy snakeEnemy = other.GetComponent<SnakeEnemy> ();
-			snakeEnemy.Die ();
+		if(other.CompareTag("BasicEnemy")){
+			RatEnemy ratEnemy = other.GetComponent<RatEnemy> ();
+			ratEnemy.Die ();
 			Destroy (gameObject);
 		}
         if(other.CompareTag("Wall")) {
