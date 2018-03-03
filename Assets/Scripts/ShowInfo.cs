@@ -10,18 +10,13 @@ public class ShowInfo : MonoBehaviour {
     private Image i;
     private Text t;
 
-	// Use this for initialization
-	void Start () {
-        i = info.GetComponentInChildren<Image>();
-        t = info.GetComponentInChildren<Text>();
-        i.enabled = false;
-        t.enabled = false;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+  	// Use this for initialization
+  	void Start () {
+          i = info.GetComponentInChildren<Image>();
+          t = info.GetComponentInChildren<Text>();
+          i.enabled = false;
+          t.enabled = false;
+  	}
 
     void OnTriggerEnter2D(Collider2D collision)
     {

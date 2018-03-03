@@ -35,8 +35,6 @@ public class Menu : MonoBehaviour {
         }
     }
 
-
-
     void HideMenu()
     {
         foreach (GameObject menu_part in menu)

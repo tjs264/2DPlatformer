@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//[RequireComponent (typeof(SimpleNPCInputModule2D))]
 public class RatEnemy : MonoBehaviour {
 
 	public GameObject player;
@@ -17,15 +16,13 @@ public class RatEnemy : MonoBehaviour {
 	private float startPos;
 	private float endPos;
 	Player user;
-		
 
 	void OnCollisionStay2D(Collision2D col){
 		if (col.collider.CompareTag ("Player")) {
 			user = col.collider.GetComponent<Player>();
-			if(user.status != Player.PlayerStatus.Giant) {
+			if (user.status != Player.PlayerStatus.Giant) {
 				player.GetComponent<Player>().Die();
-			}
-			else{
+			} else {
 				Die();
 			}
 		}

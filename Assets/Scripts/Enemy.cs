@@ -19,8 +19,6 @@ public class Enemy : MonoBehaviour{
 	SpriteRenderer[] sr;
 	Coroutine hurtRoutine;
 
-
-
 	public enum EnemyStatus
 	{
 		Hurt,
@@ -29,8 +27,8 @@ public class Enemy : MonoBehaviour{
 		Dead
 	}
 
-	void Start(){
-
+	void Start()
+	{
 		epanel = GameObject.FindObjectOfType<UIEnemyHealth> ();
 		if (epanel == null) {
 			Debug.LogError ("UIEnemyHealth component could not be found, add it to the UI");
@@ -40,20 +38,22 @@ public class Enemy : MonoBehaviour{
 		status = EnemyStatus.Active;
 	}
 
-	void Update(){
+	void Update()
+	{
 		if (user != null) {
 			transform.position = Vector2.MoveTowards (transform.position, user.transform.position, Time.deltaTime * speed);
 		}
 	}
 
-	void OnCollisionStay2D (Collision2D other){
+	void OnCollisionStay2D (Collision2D other)
+	{
 		if (other.collider.CompareTag ("Player")) {
 			user.GetComponent<Player> ().Die ();
 		}
 	}
 
-
-	public void OnHit(){
+	public void OnHit()
+	{
 		if (status != EnemyStatus.Active) {
 			return;
 		}
@@ -70,7 +70,8 @@ public class Enemy : MonoBehaviour{
 		hurtRoutine = StartCoroutine (HurtRoutine ());
 	}
 
-	IEnumerator HurtRoutine (){
+	IEnumerator HurtRoutine ()
+	{
 		status = EnemyStatus.Hurt;
 		float timer = 0;
 		bool blink = false;
@@ -93,12 +94,12 @@ public class Enemy : MonoBehaviour{
 		}
 		status = EnemyStatus.Active;
 	}
-		
 
-	void Die (){
+
+	void Die ()
+	{
 		Instantiate<GameObject> (deadPrefab, transform.position, transform.rotation);
 		Destroy (gameObject);
 	}
 
 }
-

@@ -24,16 +24,6 @@ public class SnakeEnemy : MonoBehaviour {
 		Dead
 	}
 
-	// Use this for initialization
-	void Start () {
-
-	}
-
-	// Update is called once per frame
-	void Update () {
-
-	}
-
 	void OnCollisionStay2D(Collision2D other){
 		if (other.collider.CompareTag ("Player")) {
 			player.GetComponent<Player>().Hurt();
@@ -76,16 +66,12 @@ public class SnakeEnemy : MonoBehaviour {
 		}
 		foreach (SpriteRenderer rend in sr) {
 			rend.color = Color.white;
-
 		}
 		status = EnemyStatus.Active;
 	}
-
 
 	public void Die (){
 		Instantiate<GameObject> (deadPrefab, transform.position, transform.rotation);
 		Destroy (gameObject);
 	}
-
-
 }

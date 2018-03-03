@@ -1,9 +1,3 @@
-﻿// <copyright file="PlayerInputModule2D.cs" company="DIS Copenhagen">
-// Copyright (c) 2017 All Rights Reserved
-// </copyright>
-// <author>Benno Lueders</author>
-// <date>07/14/2017</date>
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -74,8 +68,6 @@ public class PlatformerController2D : MonoBehaviour
 	void FixedUpdate ()
 	{
 		UpdateGrounding ();
-		// UpdateFacing ();
-
 		Vector2 vel = rb2d.velocity;
 
 		if (canMove) {
@@ -88,9 +80,6 @@ public class PlatformerController2D : MonoBehaviour
 
 		vel.y += -gravity * Time.deltaTime;
 		rb2d.velocity = vel;
-
-		// UpdateShooting ();
-		//UpdateAnimations ();
 	}
 
 	Vector2 ApplyJump (Vector2 vel)
@@ -205,61 +194,6 @@ public class PlatformerController2D : MonoBehaviour
 				Debug.DrawLine (groundCheckStart, groundCheckStart + Vector2.down * groundCheckDepth, Color.red);
 				groundCheckStart += Vector2.right * (1.0f / (groundCheckRayCount - 1.0f)) * groundCheckWidth;
 			}
-		}
-	}
-
-	bool PermissionToShoot ()
-	{
-		return (lastTimeFired + 0.2f <= Time.time && Player.hasShootPower);
-	}
-
-	void UpdateShooting()
-	{
-		// if able to fire
-		if (inputShoot && PermissionToShoot()) {
-			FireProjectile();
-			lastTimeFired = Time.time;
-		}
-
-		// if the fire button is pressed and we waited long enough since the last shot was fired, FIRE!
-		// if (Input.GetButton ("Fire") && (lastTimeFired + 1 / rateOfFire) < Time.time) {
-		// 	switch (fireMode) {
-		// 	case FireMode.Normal:
-		// 		FireNormalLaser ();
-		// 		break;
-		// 	case FireMode.ThreeShot:
-		// 		FireThreeShotLaser ();
-		// 		break;
-		// 	}
-		// 	lastTimeFired = Time.time;
-		// }
-	}
-
-	void FireProjectile()
-	{
-		Vector3 shootDirection;
-		bool flip;
-		if (facing == 1) {
-			shootDirection = Vector3.right;
-			flip = false;
-		} else { // if facing == -1
-			shootDirection = Vector3.left;
-			flip = true;
-		}
-		Debug.Log(shootDirection);
-
-		GameObject projectileObj = Instantiate (projectilePrefab, transform.position + shootDirection, Quaternion.identity);
-		Projectile newProj = projectileObj.GetComponent<Projectile>();
-		newProj.SetFlip(flip);
-		// newProj.flip = flip;
-	}
-
-	void UpdateFacing()
-	{
-		if (rb2d.velocity.x > 0 && facing == -1) {
-			facing = 1;
-		} else if (rb2d.velocity.x < 0 && facing == 1) {
-			facing = -1;
 		}
 	}
 }

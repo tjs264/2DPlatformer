@@ -39,9 +39,4 @@ public class S : MonoBehaviour
             bullet.GetComponent<Proj>().flip = false;
         }
     }
-
-    // bool PermissionToShoot ()
-  	// {
-  	// 	return (lastTimeFired + 0.2f <= Time.time && Player.hasShootPower);
-  	// }
 }

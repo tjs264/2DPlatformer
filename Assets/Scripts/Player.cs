@@ -61,7 +61,6 @@ public class Player : MonoBehaviour
 		}
 
 		hitPoints--;
-		Debug.Log ("HIT");
 		UIManager.SetLifes (hitPoints);
 		if (hitPoints <= 0) {
 			Die ();

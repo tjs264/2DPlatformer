@@ -12,12 +12,12 @@ public class UIEnemyHealth : MonoBehaviour {
 	}
 
 	public void UpdateSlider(int maxLives, int lives){
-		if (healthSlider == null)
+		if (healthSlider == null) {
 			return;
+		}
 		float relativeScale = (float)lives / (float)maxLives;
 		Vector3 scale = healthSlider.transform.localScale;
 		scale.x = relativeScale;
 		healthSlider.transform.localScale = scale;
 	}
-
 }
