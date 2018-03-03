@@ -32,7 +32,14 @@ public class SnakeEnemy : MonoBehaviour {
 		}
 	}
 
-	public void OnHit(){
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Projectile")) {
+            Die();
+        }
+    }
+
+    public void OnHit(){
 		if (status != EnemyStatus.Active) {
 			return;
 		}

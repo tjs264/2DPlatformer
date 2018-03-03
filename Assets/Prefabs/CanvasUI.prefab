@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 223193711581826670}
   - component: {fileID: 114875398047050678}
   - component: {fileID: 114642210701668232}
+  - component: {fileID: 114297615558937446}
   m_Layer: 5
   m_Name: CanvasUI
   m_TagString: Untagged
@@ -203,8 +204,27 @@ MonoBehaviour:
   - {fileID: 114263336300064958}
   - {fileID: 114009326495002890}
   - {fileID: 114924737541453444}
+  healthSlider: {fileID: 0}
   currentLifes: 5
+  enemyLives: 2
+  maxLives: 2
   removeLifeAnimTimer: 0.2
+--- !u!114 &114297615558937446
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337703665516822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &114578405341877712
 MonoBehaviour:
   m_ObjectHideFlags: 1

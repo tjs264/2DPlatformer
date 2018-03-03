@@ -21,7 +21,7 @@ public class RatEnemy : MonoBehaviour {
 		if (col.collider.CompareTag ("Player")) {
 			user = col.collider.GetComponent<Player>();
 			if (user.status != Player.PlayerStatus.Giant) {
-				player.GetComponent<Player>().Die();
+				player.GetComponent<Player>().Hurt();
 			} else {
 				Die();
 			}

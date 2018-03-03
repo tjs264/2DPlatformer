@@ -107,7 +107,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Careful! You are but a weak pear, and spikes will hurt you
+  m_Text: You may need to find a way to get a bit smaller...
 --- !u!114 &114955529477579594
 MonoBehaviour:
   m_ObjectHideFlags: 1

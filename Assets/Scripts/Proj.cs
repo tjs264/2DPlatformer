@@ -34,7 +34,7 @@ public class Proj : MonoBehaviour
   			ratEnemy.Die ();
   			Destroy (gameObject);
   		}
-      if (other.CompareTag("Wall")) {
+      if (other.CompareTag("Wall") || other.CompareTag("SnakeEnemy")) {
         Destroy(gameObject);
       }
     }

@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/yee.unity
     guid: beaa2cbd00703441994e4e22a827e32d
   - enabled: 1
+    path: Assets/Scenes/tstone3.unity
+    guid: 9e1896762eaec43b8a870cd768e2179d
+  - enabled: 1
     path: Assets/Scenes/Level 3.unity
     guid: a596ac1f14a734b2a8647e973a4d3f9c
   - enabled: 1

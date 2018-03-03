@@ -45,9 +45,18 @@ public class Menu : MonoBehaviour {
 
     void RestartLevel() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (SceneManager.GetActiveScene().buildIndex <= 2) {
+            Player.hasShootPower = false; 
+        }
+        if (SceneManager.GetActiveScene().buildIndex <= 1)
+        {
+            Player.hasJumpPower = false;
+        }
     }
 
     void GoToMain() {
         SceneManager.LoadScene(0);
+        Player.hasJumpPower = false;
+        Player.hasShootPower = false;
     }
 }

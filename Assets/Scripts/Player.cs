@@ -143,7 +143,16 @@ public class Player : MonoBehaviour
         dead.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,12f);
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         yield return new WaitForSeconds(1.5f);
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (SceneManager.GetActiveScene().buildIndex <= 2)
+        {
+            Player.hasShootPower = false;
+        }
+        if (SceneManager.GetActiveScene().buildIndex <= 1)
+        {
+            Player.hasJumpPower = false;
+        }
     }
 
 	void OnTriggerEnter2D(Collider2D other)
